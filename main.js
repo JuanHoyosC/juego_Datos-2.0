@@ -187,7 +187,7 @@ var atacar = false;
       function colision(pj, pj2){
         choque = true;
           if(puño == true){
-            if(pj2.position.y >850 ){
+            
                if(pj.position.x -pj2.position.x >= 214  || pj.position.x -pj2.position.x  >=  -214   ){
                  puño = false;
                  patada = false;
@@ -197,9 +197,8 @@ var atacar = false;
                  if(vida_Pj2 == 0){
                     pj2.kill();
                     pj.animations.play('victoria');
-                 }
+                 }s
              }
-           }
          }
 
       }
