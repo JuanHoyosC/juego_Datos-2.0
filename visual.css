@@ -1,0 +1,16 @@
+html, body{
+  overflow: hidden;
+  margin: 1000;
+  padding: 1000;
+  background-color: #000000;
+}
+
+canvas{
+  margin: auto;
+}
+
+
+@font-face{
+    font-family: 'Pixeled';
+    src: local('Pixeled'), url('Fonts/Pixeled.ttf') format('ttf');
+}
