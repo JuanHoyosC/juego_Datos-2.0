@@ -197,7 +197,7 @@ var atacar = false;
                  if(vida_Pj2 == 0){
                     pj2.kill();
                     pj.animations.play('victoria');
-                 }s
+                 }
              }
          }
 
