@@ -87,7 +87,6 @@ var atacar = false;
             moverse = true;
             seguir = false;
             setTimeout(dd,1500);
-            puño = true;
           }
         }
 
@@ -109,6 +108,7 @@ var atacar = false;
             if(key.keyCode === Phaser.KeyCode.Z && moverse == true && atacar == true){
               seguir = true;
               moverse = false;
+              puño = true;
               setTimeout(dd,1500);
               pj.animations.play('ataque');
             }
@@ -197,9 +197,9 @@ var atacar = false;
                  if(vida_Pj2 == 0){
                     pj2.kill();
                     pj.animations.play('victoria');
+                 }
              }
-            }
-          }
-        }
+           }
+         }
 
       }
