@@ -151,14 +151,14 @@ var atacar = false;
           if(juego.input.keyboard.isDown(Phaser.KeyCode.A)){
              pj2.body.velocity.x = -480;
                 izquierdaEnemigo = true;
-                 pj2.scale.setTo(1.7);
+                 pj2.scale.setTo(-1.7,1.7);
                 derechaEnemigo = false;
          }
 
          if(juego.input.keyboard.isDown(Phaser.KeyCode.D)){
             pj2.body.velocity.x = 480;
                derechaEnemigo = true;
-                pj2.scale.setTo(-1.7,1.7);
+                pj2.scale.setTo(1.7);
                izquirdaEnemigo = false;
         }
 
