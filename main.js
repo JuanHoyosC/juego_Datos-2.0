@@ -9,13 +9,10 @@ var puño = false;
 var ko;
 var cont = 0;
 var audio;
-var izquierda = false;
-var derecha = false;
+var izquierdaEnemigo = false;
+var derechaEnemigo = false;
 var choque = false;
-var caminarIzquierda = false;
-var caminarDerecha = false;
 var mover;
-var teclaArriba = false;
 var patada = false;
 var salto = false;
 var suelo = false;
@@ -94,7 +91,6 @@ var atacar = false;
          atacar = true;
 
          pj2.animations.play('quieto');
-
          pj.body.velocity.x = 0;
          pj2.body.velocity.x = 0;
 
@@ -154,13 +150,17 @@ var atacar = false;
 
           if(juego.input.keyboard.isDown(Phaser.KeyCode.A)){
              pj2.body.velocity.x = -480;
+                izquierdaEnemigo = true;
+                derechaEnemigo = false;
          }
 
          if(juego.input.keyboard.isDown(Phaser.KeyCode.D)){
             pj2.body.velocity.x = 480;
+               derechaEnemigo = true;
+               izquirdaEnemigo = false;
         }
 
-          //MMOVERSE A LA IZQUIERDA
+          //MOVERSE A LA IZQUIERDA
             if(Tecla.left.isDown && moverse == true){
                   pj.animations.play('correr');
                   pj.body.velocity.x = -480;
@@ -169,15 +169,12 @@ var atacar = false;
             }
 
            //SALTAR
-          if(Tecla.up.isDown && pj.position.y == juego.height-65 && moverse == true){
+          if(Tecla.up.isDown && pj.position.y == juego.height-65){
               pj.body.velocity.y= -550;
-              console.log(pj.position.y);
-
           }
           choque = false;
           puño = false;
           patada = false;
-
 
   }
 
@@ -187,7 +184,8 @@ var atacar = false;
       function colision(pj, pj2){
         choque = true;
           if(puño == true){      
-               if(pj.position.x -pj2.position.x >= 214  || pj.position.x -pj2.position.x  >=  -214){
+               if(pj.position.x -pj2.position.x >= 214   && derechaEnemigo == true|| pj.position.x -pj2.position.x  >=  -214 && 
+                  izquierdaEnemigo == true){
                  puño = false;
                  patada = false;
                  vida_Pj2 = vida_Pj2-100;
