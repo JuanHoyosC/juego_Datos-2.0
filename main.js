@@ -186,7 +186,7 @@ var atacar = false;
 
       function colision(pj, pj2){
         choque = true;
-          if(puño == true && pj.position.y > 780 ){
+          if(puño == true){
             if(pj2.position.y >850 ){
                if(pj.position.x -pj2.position.x >= 214  || pj.position.x -pj2.position.x  >=  -214   ){
                  puño = false;
