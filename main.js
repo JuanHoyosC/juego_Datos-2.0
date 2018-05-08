@@ -4,7 +4,6 @@ var pj2;
 var vida;
 var vida1;
 var Tecla;
-var sw = 0;
 var puño = false;
 var cont = 0;
 var audio;
@@ -200,10 +199,22 @@ var Correr1 = 'correrAtras';
       function colision(pj, pj2){
         choque = true;
           if(puño == true){      
-               if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 0){          
+               if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= -190 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 190){          
                  puño = false;
                  patada = false;
-                 vida_Pj2 = vida_Pj2-100;
+                 vida_Pj2 = vida_Pj2-50;
+                 Txt2.text='Vida jugador 2 : '+vida_Pj2;        
+                 if(vida_Pj2 == 0){
+                    pj2.kill();
+                    pj.animations.play('victoria');
+                 }
+ 
+             }
+                
+                if(pj.position.x -pj2.position.x >= -190  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  >=0   && pj.position.x -pj2.position.x  <= 190){          
+                 puño = false;
+                 patada = false;
+                 vida_Pj2 = vida_Pj2-50;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 == 0){
                     pj2.kill();
