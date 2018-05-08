@@ -9,7 +9,7 @@ var puño = false;
 var ko;
 var cont = 0;
 var audio;
-var izquierdaEnemigo = false;
+var izquierdaEnemigo = true;
 var derechaEnemigo = false;
 var choque = false;
 var mover;
@@ -186,8 +186,11 @@ var atacar = false;
       function colision(pj, pj2){
         choque = true;
           if(puño == true){      
-               if(pj.position.x -pj2.position.x >= 214   && derechaEnemigo == true|| pj.position.x -pj2.position.x  >=  -214 && 
-                  izquierdaEnemigo == true){
+               if(pj.position.x -pj2.position.x >= 214|| pj.position.x -pj2.position.x  >=  -214){
+                     
+                     if(pj.position.x - pj2.position.x =< 200 && izquierdaEnemigo == true){
+                     console.log('golpe');
+                     }
                  puño = false;
                  patada = false;
                  vida_Pj2 = vida_Pj2-100;
