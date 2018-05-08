@@ -8,8 +8,8 @@ var sw = 0;
 var puño = false;
 var cont = 0;
 var audio;
-var izquierda = 1.7;
-var derecha = -1.7;
+var izquierda = -1.7;
+var derecha = 1.7;
 var choque = false;
 var mover;
 var patada = false;
@@ -117,15 +117,15 @@ var atacar = false;
         
         if(pj.position.x > pj2.position.x){
            pj.scale.setTo(-1.7,1.7);
-              derecha = 1.7;
-              izquierda = -1.7;
+              derecha = -1.7;
+              izquierda = 1.7;
            pj2.scale.setTo(1.7);   
            }
                
-           if(pj2.position.x > pj.position.x){
+           if(pj.position.x < pj2.position.x){
            pj.scale.setTo(1.7);
            pj2.scale.setTo(-1.7,1.7);  
-              derecha = -1.7;
+              derecha =  1.7;
               izquierda = 1.7;
            }
 
