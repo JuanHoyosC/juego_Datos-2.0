@@ -21,6 +21,8 @@ var TXT, TXT2;
 var moverse = true;
 var seguir = false;
 var atacar = false;
+var Correr = 'correr';
+var Correr1 = 'correrAtras';
 
 
 
@@ -119,7 +121,9 @@ var atacar = false;
            pj.scale.setTo(-1.7,1.7);
               derecha = -1.7;
               izquierda = 1.7;
-           pj2.scale.setTo(1.7);   
+              pj2.scale.setTo(1.7);   
+              Correr = 'correrAtras';
+              Correr1 ='correr';
            }
                
            if(pj.position.x < pj2.position.x){
@@ -127,6 +131,8 @@ var atacar = false;
            pj2.scale.setTo(-1.7,1.7);  
               derecha =  1.7;
               izquierda = 1.7;
+              Correr1 = 'correrAtras';
+              Correr ='correr';
            }
 
 
@@ -150,8 +156,7 @@ var atacar = false;
 
            if (Tecla.right.isDown && moverse == true ) {
                pj.body.velocity.x = 480;
-               pj.animations.play('correr');
-               pj.scale.setTo(izquierda, derecha);
+               pj.animations.play(Correr);
                atacar = false;
           }
 
@@ -178,7 +183,7 @@ var atacar = false;
 
           //MOVERSE A LA IZQUIERDA
             if(Tecla.left.isDown && moverse == true){
-                  pj.animations.play('correrAtras');
+                  pj.animations.play(Correr1);
                   pj.body.velocity.x = -480;
                   atacar = false;
             }
