@@ -194,8 +194,7 @@ var atacar = false;
                  puño = false;
                  patada = false;
                  vida_Pj2 = vida_Pj2-100;
-                 Txt2.text='Vida jugador 2 : '+vida_Pj2;
-                     
+                 Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 == 0){
                     pj2.kill();
                     pj.animations.play('victoria');
