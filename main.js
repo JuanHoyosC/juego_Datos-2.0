@@ -204,7 +204,7 @@ var Correr1 = 'correrAtras';
                  patada = false;
                  vida_Pj2 = vida_Pj2-50;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
-                 if(vida_Pj2 == 0){
+                 if(vida_Pj2 <= 0){
                     pj2.kill();
                     pj.animations.play('victoria');
                  }
@@ -214,9 +214,9 @@ var Correr1 = 'correrAtras';
                 if(pj.position.x -pj2.position.x >= -190  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  >=0   && pj.position.x -pj2.position.x  <= 190){          
                  puño = false;
                  patada = false;
-                 vida_Pj2 = vida_Pj2-50;
+                 vida_Pj2 = vida_Pj2-100;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
-                 if(vida_Pj2 == 0){
+                 if(vida_Pj2 <= 0){
                     pj2.kill();
                     pj.animations.play('victoria');
                  }
