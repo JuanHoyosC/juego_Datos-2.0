@@ -117,12 +117,16 @@ var atacar = false;
         
         if(pj.position.x > pj2.position.x){
            pj.scale.setTo(-1.7,1.7);
+              derecha = 1.7;
+              izquierda = -1.7;
            pj2.scale.setTo(1.7);   
            }
                
            if(pj2.position.x > pj.position.x){
            pj.scale.setTo(1.7);
-           pj2.scale.setTo(-1.7,1.7);   
+           pj2.scale.setTo(-1.7,1.7);  
+              derecha = -1.7;
+              izquierda = 1.7;
            }
 
 
@@ -147,7 +151,7 @@ var atacar = false;
            if (Tecla.right.isDown && moverse == true ) {
                pj.body.velocity.x = 480;
                pj.animations.play('correr');
-               pj.scale.setTo(1.7);
+               pj.scale.setTo(izquierda, derecha);
                atacar = false;
           }
 
@@ -161,7 +165,7 @@ var atacar = false;
           if(juego.input.keyboard.isDown(Phaser.KeyCode.A)){
              pj2.body.velocity.x = -480;
                 izquierdaEnemigo = true;
-                 pj2.scale.setTo(-1.7,1.7);
+                 pj2.scale.setTo(derecha,izquierda);
                 derechaEnemigo = false;
          }
 
