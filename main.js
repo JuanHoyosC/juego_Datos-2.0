@@ -188,9 +188,6 @@ var atacar = false;
           if(puño == true){      
                if(pj.position.x -pj2.position.x >= 214|| pj.position.x -pj2.position.x  >=  -214){
                      
-                     if(pj.position.x - pj2.position.x =< 200 && izquierdaEnemigo == true){
-                     console.log('golpe');
-                     }
                  puño = false;
                  patada = false;
                  vida_Pj2 = vida_Pj2-100;
