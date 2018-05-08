@@ -206,6 +206,7 @@ var Correr1 = 'correrAtras';
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
                     pj2.kill();
+                    Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                  }
  
@@ -218,6 +219,7 @@ var Correr1 = 'correrAtras';
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
                     pj2.kill();
+                       Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                  }
  
