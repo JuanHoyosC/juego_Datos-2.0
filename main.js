@@ -115,6 +115,11 @@ var atacar = false;
               moverse = false;
             }
         }
+        
+        if(pj.position.x > pj2.position.x){
+           pj.scale.setTo(-1.7,1.7);
+           pj2.scale.setTo(1.7);   
+           }
 
 
         //SALTA SEGUNDO Personaje
