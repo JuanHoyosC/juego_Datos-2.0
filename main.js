@@ -52,7 +52,7 @@ var segundos = 60;
           Txt.text='Vida jugador 1 : '+vida_Pj;
           Txt3 = juego.add.text(juego.world.width/2,22 , 'Puntos: 0', {fontSize: '35px', fill: 'white',fontFamily: 'Pixeled'});
           Txt3.text=segundos;
-          Txt4 = juego.add.text(juego.world.width/2,juego.world.height/2, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
+          Txt4 = juego.add.text(775,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
      
 
            //AÑADE LAS FISICAS AL JUEGO
@@ -110,6 +110,7 @@ var segundos = 60;
                  }     
                      if(vida_Pj  > vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';
+                    pj.animations.play('victoria');
                  }
                      
                      if(vida_Pj  == vida_Pj2 ){
