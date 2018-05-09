@@ -101,7 +101,7 @@ var segundos = 60;
 
         function tiempo(){     
                if(segundos != 0){
-               segundos2 =segundos2-1;
+               segundos =segundos-1;
                Txt3.text=segundos;
                setTimeout(tiempo,1000);
                } 
