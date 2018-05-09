@@ -20,8 +20,8 @@ var Correr = 'correr';
 var Correr1 = 'correrAtras';
 var saltoPj2;
 var agachado = false;
-var segundos = 5;
-var segundos2 = 9;
+var segundos = 60;
+
 
       function preload(){
 
@@ -51,7 +51,7 @@ var segundos2 = 9;
           Txt = juego.add.text(80, 22, 'Puntos: 0', {fontSize: '27px', fill: 'white',fontFamily: 'Pixeled'});
           Txt.text='Vida jugador 1 : '+vida_Pj;
           Txt3 = juego.add.text(juego.world.width/2,22 , 'Puntos: 0', {fontSize: '35px', fill: 'white',fontFamily: 'Pixeled'});
-          Txt3.text='59';
+          Txt3.text=segundos;
           Txt4 = juego.add.text(juego.world.width/2,juego.world.height/2, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
      
 
@@ -100,22 +100,16 @@ var segundos2 = 9;
         }
 
         function tiempo(){     
-              if(segundos != 0 && segundos2 != 0){
+               if(segundos != 0){
                segundos2 =segundos2-1;
-               Txt3.text=segundos+''+segundos2;
-              if(segundos2 == 0 && segundos != 0){
-                 segundos = segundos-1;
-                 segundos2 = 9;
-                 }  
-                Txt3.text=segundos+''+segundos2;
+               Txt3.text=segundos;
                setTimeout(tiempo,1000);
-              }else{
+               } 
               if(vida_pj < vidapj2){
                     Txt4.text='El ganador es el jugador 2';
                  }else{
                     Txt4.text='El ganador es el jugador 2';
-                 }
-              }     
+                 }         
         }
 
          function update () {
