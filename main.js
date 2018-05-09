@@ -52,7 +52,7 @@ var segundos2 = 9;
           Txt.text='Vida jugador 1 : '+vida_Pj;
           Txt3 = juego.add.text(juego.world.width/2,22 , 'Puntos: 0', {fontSize: '35px', fill: 'white',fontFamily: 'Pixeled'});
           Txt3.text='59';
-          Txt4 = juego.add.text(juego.world.width/2,juego.world.height/2, 'Puntos: 0', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
+          Txt4 = juego.add.text(juego.world.width/2,juego.world.height/2, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
      
 
            //AÑADE LAS FISICAS AL JUEGO
