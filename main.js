@@ -101,7 +101,7 @@ var TXT3;
 
         function tiempo(){     
               if(segundos != 0 && segundos2 != 0){
-                    segundos2 =segundos2-1;
+              segundos2 =segundos2-1;
               if(segundos2 == 0){
                  segundos = segundos-1;
                  segundos2 = 9;
