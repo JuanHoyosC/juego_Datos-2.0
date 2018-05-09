@@ -326,7 +326,7 @@ var cont = 0;
  
              }
                 
-                if(pj.position.x -pj2.position.x >= -190  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  >=0   && pj.position.x -pj2.position.x  <= 190){          
+                if(pj.position.x - pj2.position.x >= -190  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  >=0   && pj.position.x -pj2.position.x  <= 190){          
                  puño = false;
                  patada = false;
                  pj2.animations.play('daño');
