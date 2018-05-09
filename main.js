@@ -104,6 +104,8 @@ var cont = 0;
           pj.position.y = juego.height-65;
           pj2.position.x = juego.width-300;
           pj2.position.y = juego.height-65;
+          pj.animations.play('principal');
+          pj2.animations.play('principal');     
           Txt4.text='';
             }else{
               if(ganadas_pj == 2){
