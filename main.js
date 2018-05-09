@@ -20,8 +20,9 @@ var Correr = 'correr';
 var Correr1 = 'correrAtras';
 var saltoPj2;
 var agachado = false;
-
-
+var segundos = 0;
+var segundos2 = 0;
+var TXT3;
 
       function preload(){
 
@@ -50,6 +51,9 @@ var agachado = false;
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
           Txt = juego.add.text(80, 22, 'Puntos: 0', {fontSize: '27px', fill: 'white',fontFamily: 'Pixeled'});
           Txt.text='Vida jugador 1 : '+vida_Pj;
+          Txt3 = juego.add.text(juego.world.width/2,juego.world.height/2 , 'Puntos: 0', {fontSize: '35px', fill: 'white',fontFamily: 'Pixeled'});
+          Txt3.text='00';
+     
 
            //AÑADE LAS FISICAS AL JUEGO
           juego.physics.startSystem(Phaser.Physics.ARCADE);
@@ -92,6 +96,11 @@ var agachado = false;
             seguir = false;
             setTimeout(dd,1500);
           }
+        }
+
+        function tiempo(){
+              
+            setTimeout(tiempo,1000);
         }
 
          function update () {
