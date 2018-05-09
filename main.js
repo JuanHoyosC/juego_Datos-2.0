@@ -79,7 +79,7 @@ var agachado = false;
           pj.animations.add('victoria',[57,58,59,60,61],7,false);
           pj.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
           pj.animations.add('ataque3',[9,10,11,12,13,14,15,16,17,18],7,false);
-          pj2.animations.add('daño',[0,1,2,3,4,5,6,78],7,false);   
+          pj2.animations.add('daño',[0,1,2,3,4,5,6,7,8,18],6,false);   
           pj.animations.play('principal');
           pj2.animations.play('principal');
                
@@ -123,7 +123,6 @@ var agachado = false;
               puño = true;
               setTimeout(dd,1500);
               pj.animations.play('ataque');
-              pj2.animations.play('daño');
               agachado = false;
             }
 
@@ -133,7 +132,6 @@ var agachado = false;
               pj.animations.play('ataque2');
               moverse = false;
               setTimeout(dd,1500);
-              pj2.animations.play('daño');
             }
         }
         
@@ -229,6 +227,7 @@ var agachado = false;
                if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= -190 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 190){          
                  puño = false;
                  patada = false;
+                 pj2.animations.play('daño');
                  vida_Pj2 = vida_Pj2-50;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
@@ -243,6 +242,7 @@ var agachado = false;
                  puño = false;
                  patada = false;
                  vida_Pj2 = vida_Pj2-100;
+                  pj2.animations.play('daño');
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
                     pj2.kill();
@@ -257,6 +257,7 @@ var agachado = false;
                if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= -190 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 190){          
                  puño = false;
                  patada = false;
+                 pj2.animations.play('daño');
                  vida_Pj2 = vida_Pj2-50;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
@@ -270,6 +271,7 @@ var agachado = false;
                 if(pj.position.x -pj2.position.x >= -190  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  >=0   && pj.position.x -pj2.position.x  <= 190){          
                  puño = false;
                  patada = false;
+                 pj2.animations.play('daño');
                  vida_Pj2 = vida_Pj2-100;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
