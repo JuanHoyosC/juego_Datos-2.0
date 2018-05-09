@@ -104,12 +104,19 @@ var segundos = 60;
                segundos =segundos-1;
                Txt3.text=segundos;
                setTimeout(tiempo,1000);
-               } 
-              if(vida_Pj  < vida_Pj2 ){
-                    Txt4.text='El ganador es el jugador 2';
-                 }else{
-                    Txt4.text='El ganador es el jugador 2';
-                 }         
+               }else{
+               if(vida_Pj  < vida_Pj2 ){
+                    Txt4.text='EL GANADOR ES EL JUGADOR2';
+                 }     
+                     if(vida_Pj  > vida_Pj2 ){
+                    Txt4.text='EL GANADOR ES EL JUGADOR 1';
+                 }
+                     
+                     if(vida_Pj  == vida_Pj2 ){
+                    Txt4.text='EMPATE';
+                 }
+               }
+              
         }
 
          function update () {
