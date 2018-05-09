@@ -12,7 +12,7 @@ var salto = false;
 var suelo = false;
 var vida_Pj = 1000;
 var vida_Pj2 = 1000;
-var TXT, TXT2;
+var TXT, TXT2,TXT3,TXT4;
 var moverse = true;
 var seguir = false;
 var atacar = false;
@@ -22,7 +22,6 @@ var saltoPj2;
 var agachado = false;
 var segundos = 5;
 var segundos2 = 9;
-var TXT3;
 
       function preload(){
 
@@ -53,6 +52,7 @@ var TXT3;
           Txt.text='Vida jugador 1 : '+vida_Pj;
           Txt3 = juego.add.text(juego.world.width/2,22 , 'Puntos: 0', {fontSize: '35px', fill: 'white',fontFamily: 'Pixeled'});
           Txt3.text='59';
+          Txt4 = juego.add.text(juego.world.width/2,juego.world.height/2, 'Puntos: 0', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
      
 
            //AÑADE LAS FISICAS AL JUEGO
@@ -109,6 +109,12 @@ var TXT3;
                  }
                
                setTimeout(tiempo,1000);
+              }else{
+              if(vida_pj < vidapj2){
+                    Txt4.text='El ganador es el jugador 2';
+                 }else{
+                    Txt4.text='El ganador es el jugador 2';
+                 }
               }     
         }
 
