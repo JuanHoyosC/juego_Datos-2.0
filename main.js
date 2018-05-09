@@ -103,11 +103,11 @@ var segundos2 = 9;
               if(segundos != 0 && segundos2 != 0){
                segundos2 =segundos2-1;
                Txt3.text=segundos+''+segundos2;
-              if(segundos2 == 0){
+              if(segundos2 == 0 && segundos != 0){
                  segundos = segundos-1;
                  segundos2 = 9;
-                 }
-               
+                 }  
+                Txt3.text=segundos+''+segundos2;
                setTimeout(tiempo,1000);
               }else{
               if(vida_pj < vidapj2){
