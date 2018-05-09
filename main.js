@@ -127,17 +127,19 @@ var cont = 0;
                     Txt4.text='EL GANADOR ES EL JUGADOR2';
                      ganadas_pj2++;
                      cont++;
+                     moverese = false;
                      setTimeout(round,4000);
                  }     
                      if(vida_Pj  > vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';
                     pj.animations.play('victoria');
                     ganadas_pj++;
+                    moverese = false;
                     cont++;
                     setTimeout(round,4000);
                  }
                      
-                     if(vida_Pj  == vida_Pj2 ){
+                 if(vida_Pj  == vida_Pj2 ){
                     Txt4.text='EMPATE';
                  }
                }
@@ -209,18 +211,18 @@ var cont = 0;
 
         //Movimiento del segundo personaje
 
-        if(juego.input.keyboard.isDown(Phaser.KeyCode.W)  && suelo == true ){
+        if(juego.input.keyboard.isDown(Phaser.KeyCode.W)  && suelo == true && moverse == true){
          pj2.body.velocity.y= -550;
          salto = true;
          suelo = false;
        }
 
-           if(juego.input.keyboard.isDown(Phaser.KeyCode.A)){
+           if(juego.input.keyboard.isDown(Phaser.KeyCode.A) && moverse == true){
              pj2.body.velocity.x = -480;
                  pj2.scale.setTo(-1.7, 1.7);
          }
 
-         if(juego.input.keyboard.isDown(Phaser.KeyCode.D)){
+         if(juego.input.keyboard.isDown(Phaser.KeyCode.D) && moverse == true){
             pj2.body.velocity.x = 480;
                 pj2.scale.setTo(1.7);
         }
@@ -252,16 +254,16 @@ var cont = 0;
             }
 
            //SALTAR
-          if(Tecla.up.isDown && pj.position.y == juego.height-65){
+          if(Tecla.up.isDown && pj.position.y == juego.height-65 && moverse == true){
               pj.body.velocity.y= -550;
               pj.animations.play('principal');
               agachado = false;
           }
           
          if(pj2.position.y == juego.height-65 ){
-         salto = false;
-         suelo = true;
-       }
+            salto = false;
+            suelo = true;
+           }
                
           choque = false;
           puño = false;
