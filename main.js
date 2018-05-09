@@ -1,26 +1,24 @@
 var juego = new Phaser.Game(1950, 970, Phaser.AUTO, '', {preload: preload, create: create, update: update});
-var pj;
-var pj2;
-var Tecla;
+var pj,saltoPj2,pj2,Tecla,mover,TXT, TXT2,TXT3,TXT4;
 var puño = false;
 var izquierda = -1.7;
 var derecha = 1.7;
 var choque = false;
-var mover;
 var patada = false;
 var salto = false;
 var suelo = false;
 var vida_Pj = 1000;
 var vida_Pj2 = 1000;
-var TXT, TXT2,TXT3,TXT4;
 var moverse = true;
 var seguir = false;
 var atacar = false;
 var Correr = 'correr';
 var Correr1 = 'correrAtras';
-var saltoPj2;
+var ganadas_pj = 0;
+var ganadas_pj2 = 0;
 var agachado = false;
 var segundos = 100;
+var cont = 0;
 
 
       function preload(){
@@ -86,9 +84,7 @@ var segundos = 100;
           pj2.animations.add('daño',[0,1,2,3,4,5,6,7,8,18],6,false);   
           pj.animations.play('principal');
           pj2.animations.play('principal');
-          setTimeout(tiempo,1000);
-               
-
+          setTimeout(tiempo,1000);           
         }
 
         function dd(){
@@ -99,6 +95,28 @@ var segundos = 100;
           }
         }
 
+        function round(){
+         if(cont <= 2){
+          vida_Pj = 1000;
+          vida_Pj2 = 1000;
+          segundos = 100;
+          pj.position.x = 300;
+          pj.position.y = juego.height-65;
+          pj2.position.x = juego.width-300;
+          pj2.position.y = juego.height-65;
+          Txt4.text='';
+            }else{
+              if(ganadas_pj == 2){
+                 Txt4.text='EL GANADOR ES EL JUGADOR 1';
+                 }
+                  
+               if(ganadas_pj2 == 2){
+                 Txt4.text='EL GANADOR ES EL JUGADOR 1';
+               }
+            }    
+              
+        }
+
         function tiempo(){     
                if(segundos != 0){
                segundos =segundos-1;
@@ -107,10 +125,16 @@ var segundos = 100;
                }else{
                if(vida_Pj  < vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR2';
+                     ganadas_pj2++;
+                     cont++;
+                     setTimeout(round,4000);
                  }     
                      if(vida_Pj  > vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';
                     pj.animations.play('victoria');
+                    ganadas_pj++;
+                    cont++;
+                    setTimeout(round,4000);
                  }
                      
                      if(vida_Pj  == vida_Pj2 ){
@@ -259,7 +283,8 @@ var segundos = 100;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
                     pj2.kill();
-                    Txt2.text='Vida jugador 2 : 0';  
+                    Txt2.text='Vida jugador 2 : 0'; 
+                    setTimeout(round,4000);   
                     pj.animations.play('victoria');
                  }
  
@@ -273,7 +298,8 @@ var segundos = 100;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
                     pj2.kill();
-                       Txt2.text='Vida jugador 2 : 0';  
+                    Txt2.text='Vida jugador 2 : 0';
+                    setTimeout(round,4000);
                     pj.animations.play('victoria');
                  }
  
@@ -289,6 +315,7 @@ var segundos = 100;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
                     pj2.kill();
+                    ganadas_pj++;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                  }
@@ -303,7 +330,8 @@ var segundos = 100;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
                     pj2.kill();
-                       Txt2.text='Vida jugador 2 : 0';  
+                    ganadas_pj++;
+                    Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                  }
  
