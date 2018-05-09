@@ -106,7 +106,7 @@ var TXT3;
                  segundos = segundos-1;
                  segundos2 = 9;
                  }
-               Txt3.text=segundos+segundos2;
+               Txt3.text=segundos+ ''+segundos2;
                setTimeout(tiempo,1000);
               }     
         }
