@@ -78,6 +78,8 @@ var saltoPj2;
           pj2.animations.add('quieto', [0,1,2,3,4,5,6,7],10,false);
           pj.animations.add('agachado',[26],10,false);
           pj.animations.add('victoria',[57,58,59,60,61],7,false);
+          pj.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
+               
 
         }
 
@@ -113,6 +115,7 @@ var saltoPj2;
 
             if(key.keyCode === Phaser.KeyCode.X && moverse == true && atacar == true){
               patada = true;
+              pj.animations.play('ataque');
               moverse = false;
             }
         }
@@ -200,6 +203,34 @@ var saltoPj2;
       function colision(pj, pj2){
         choque = true;
           if(puño == true){      
+               if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= -190 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 190){          
+                 puño = false;
+                 patada = false;
+                 vida_Pj2 = vida_Pj2-50;
+                 Txt2.text='Vida jugador 2 : '+vida_Pj2;        
+                 if(vida_Pj2 <= 0){
+                    pj2.kill();
+                    Txt2.text='Vida jugador 2 : 0';  
+                    pj.animations.play('victoria');
+                 }
+ 
+             }
+                
+                if(pj.position.x -pj2.position.x >= -190  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  >=0   && pj.position.x -pj2.position.x  <= 190){          
+                 puño = false;
+                 patada = false;
+                 vida_Pj2 = vida_Pj2-100;
+                 Txt2.text='Vida jugador 2 : '+vida_Pj2;        
+                 if(vida_Pj2 <= 0){
+                    pj2.kill();
+                       Txt2.text='Vida jugador 2 : 0';  
+                    pj.animations.play('victoria');
+                 }
+ 
+             }
+         }
+            
+              if(patada == true){      
                if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= -190 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 190){          
                  puño = false;
                  patada = false;
