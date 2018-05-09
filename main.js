@@ -29,7 +29,7 @@ var saltoPj2;
       function preload(){
 
             juego.load.image('Fondo', 'Imagenes/Fondo_Juego.jpg');
-            juego.load.spritesheet('personajes', 'Quieto/completo.png',200,165,62)
+            juego.load.spritesheet('personajes', 'Quieto/PJ.png',200,165,57)
             juego.load.spritesheet('golpe', 'Imagenes/golpe.png',290,400)
             juego.load.spritesheet('enemigo', 'Quieto/Personajes.png',160,160)
             juego.load.audio('audio1','Musica/GameOver.mp3');
@@ -71,7 +71,7 @@ var saltoPj2;
           pj.body.collideWorldBounds = true;
           pj2.body.collideWorldBounds = true;
           //ANIMACIONES
-          pj.animations.add('quieto', [0,1,2,3,4,5,6],10,false);
+          pj.animations.add('quieto', [18,19,20,21,22,23,24],10,false);
           pj.animations.add('correr', [7,8,9,10,11,12,13,14,15],10,false);
           pj.animations.add('correrAtras', [15,14,13,12,11,10,9,8,7],10,false);
           pj.animations.add('ataque', [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32],15,false);
