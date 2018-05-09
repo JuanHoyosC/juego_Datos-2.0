@@ -20,7 +20,7 @@ var Correr = 'correr';
 var Correr1 = 'correrAtras';
 var saltoPj2;
 var agachado = false;
-var segundos = 60;
+var segundos = 100;
 
 
       function preload(){
@@ -52,7 +52,7 @@ var segundos = 60;
           Txt.text='Vida jugador 1 : '+vida_Pj;
           Txt3 = juego.add.text(juego.world.width/2,22 , 'Puntos: 0', {fontSize: '35px', fill: 'white',fontFamily: 'Pixeled'});
           Txt3.text=segundos;
-          Txt4 = juego.add.text(775,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
+          Txt4 = juego.add.text(675,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
      
 
            //AÑADE LAS FISICAS AL JUEGO
