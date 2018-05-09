@@ -22,6 +22,7 @@ var seguir = false;
 var atacar = false;
 var Correr = 'correr';
 var Correr1 = 'correrAtras';
+var saltoPj2;
 
 
 
