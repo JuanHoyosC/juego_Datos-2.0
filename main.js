@@ -79,6 +79,7 @@ var saltoPj2;
           pj.animations.add('agachado',[26],10,false);
           pj.animations.add('victoria',[57,58,59,60,61],7,false);
           pj.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
+          pj2.animations.add('daño',[0,1,2,3,4,5,6,78],7,false);    
                
 
         }
@@ -94,7 +95,6 @@ var saltoPj2;
          function update () {
          atacar = true;
 
-         pj2.animations.play('quieto');
          pj.body.velocity.x = 0;
          pj2.body.velocity.x = 0;
 
@@ -111,12 +111,16 @@ var saltoPj2;
               puño = true;
               setTimeout(dd,1500);
               pj.animations.play('ataque');
+              pj2.animations.play('daño');
             }
 
             if(key.keyCode === Phaser.KeyCode.X && moverse == true && atacar == true){
               patada = true;
+              seguir = true;
               pj.animations.play('ataque');
               moverse = false;
+              setTimeout(dd,1500);
+              pj2.animations.play('daño');
             }
         }
         
