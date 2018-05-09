@@ -105,7 +105,7 @@ var segundos = 60;
                Txt3.text=segundos;
                setTimeout(tiempo,1000);
                } 
-              if(vida_pj < vidapj2){
+              if(vida_pj < vida_pj2){
                     Txt4.text='El ganador es el jugador 2';
                  }else{
                     Txt4.text='El ganador es el jugador 2';
