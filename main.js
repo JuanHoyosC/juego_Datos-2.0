@@ -1,12 +1,8 @@
 var juego = new Phaser.Game(1950, 970, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 var pj;
 var pj2;
-var vida;
-var vida1;
 var Tecla;
 var puño = false;
-var cont = 0;
-var audio;
 var izquierda = -1.7;
 var derecha = 1.7;
 var choque = false;
@@ -23,6 +19,7 @@ var atacar = false;
 var Correr = 'correr';
 var Correr1 = 'correrAtras';
 var saltoPj2;
+var agachado = false;
 
 
 
@@ -80,6 +77,7 @@ var saltoPj2;
           pj.animations.add('agachado',[26],10,false);
           pj.animations.add('victoria',[57,58,59,60,61],7,false);
           pj.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
+          pj.animations.add('ataque3',[9,10,11,12,13,14,15,16,17],7,false);
           pj2.animations.add('daño',[0,1,2,3,4,5,6,78],7,false);   
           pj.animations.play('principal');
                
@@ -104,19 +102,30 @@ var saltoPj2;
         // juego.physics.arcade.collide(pj,pj2);
 
 
-        //Golpe
+        //Golpes al enemigo
 
         juego.input.keyboard.onUpCallback = function(key){
-            if(key.keyCode === Phaser.KeyCode.Z && moverse == true && atacar == true){
+            if(key.keyCode === Phaser.KeyCode.K && moverse == true && atacar == true){
+              seguir = true;
+              moverse = false;
+              puño = true;
+              setTimeout(dd,1500);
+              pj.animations.play('ataque3');
+              pj2.animations.play('daño');
+              agachado = false;
+            }
+              
+              if(key.keyCode === Phaser.KeyCode.Z && moverse == true && atacar == true){
               seguir = true;
               moverse = false;
               puño = true;
               setTimeout(dd,1500);
               pj.animations.play('ataque');
               pj2.animations.play('daño');
+              agachado = false;
             }
 
-            if(key.keyCode === Phaser.KeyCode.X && moverse == true && atacar == true){
+            if(key.keyCode === Phaser.KeyCode.X && moverse == true && atacar == true && agachado == true){
               patada = true;
               seguir = true;
               pj.animations.play('ataque2');
@@ -125,6 +134,8 @@ var saltoPj2;
               pj2.animations.play('daño');
             }
         }
+        
+        //deteccion de posicion del enemigo
         
         if(pj.position.x > pj2.position.x){
            pj.scale.setTo(-1.7,1.7);
@@ -145,7 +156,7 @@ var saltoPj2;
            }
 
 
-        //SALTA SEGUNDO Personaje
+        //Movimiento del segundo personaje
 
         if(juego.input.keyboard.isDown(Phaser.KeyCode.W)  && suelo == true ){
          pj2.body.velocity.y= -550;
@@ -153,30 +164,7 @@ var saltoPj2;
          suelo = false;
        }
 
-       if(pj2.position.y == juego.height-65 ){
-         salto = false;
-         suelo = true;
-       }
-
-         //PATADA
-
-
-          //MOVERSE A LA DERECA
-
-           if (Tecla.right.isDown && moverse == true ) {
-               pj.body.velocity.x = 480;
-               pj.animations.play(Correr);
-               atacar = false;
-          }
-
-          //Agacharse
-
-          if(Tecla.down.isDown && moverse == true){
-           pj.animations.play('agachado');
-           atacar = false;
-          }
-
-          if(juego.input.keyboard.isDown(Phaser.KeyCode.A)){
+           if(juego.input.keyboard.isDown(Phaser.KeyCode.A)){
              pj2.body.velocity.x = -480;
                  pj2.scale.setTo(-1.7, 1.7);
          }
@@ -186,17 +174,44 @@ var saltoPj2;
                 pj2.scale.setTo(1.7);
         }
 
+
+          //MOVERSE A LA DERECA
+
+           if (Tecla.right.isDown && moverse == true ) {
+               pj.body.velocity.x = 480;
+               pj.animations.play(Correr);
+               atacar = false;
+               agachado = false;
+          }
+
+          //Agacharse
+
+          if(Tecla.down.isDown && moverse == true){
+           pj.animations.play('agachado');
+           atacar = false;
+                agachado = true;
+          }
+
           //MOVERSE A LA IZQUIERDA
             if(Tecla.left.isDown && moverse == true){
                   pj.animations.play(Correr1);
                   pj.body.velocity.x = -480;
-                  atacar = false;
+                  atacar = false;      
+                  agachado = false;
             }
 
            //SALTAR
           if(Tecla.up.isDown && pj.position.y == juego.height-65){
               pj.body.velocity.y= -550;
+              pj.animations.play('principal');
+              agachado = false;
           }
+          
+         if(pj2.position.y == juego.height-65 ){
+         salto = false;
+         suelo = true;
+       }
+               
           choque = false;
           puño = false;
           patada = false;
