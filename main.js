@@ -72,10 +72,10 @@ var saltoPj2;
           pj2.body.collideWorldBounds = true;
           //ANIMACIONES
           pj.animations.add('quieto', [18,19,20,21,22,23,24],10,false);
-          pj.animations.add('correr', [7,8,9,10,11,12,13,14,15],10,false);
-          pj.animations.add('correrAtras', [15,14,13,12,11,10,9,8,7],10,false);
+          pj.animations.add('correr', [33,34,35,36,37,38,39,40],10,false);
+          pj.animations.add('correrAtras', [40,39,38,37,36,35,34,33],10,false);
           pj.animations.add('ataque', [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32],15,false);
-          pj2.animations.add('quieto', [0,1,2,3,4,5,6],10,true);
+          pj2.animations.add('quieto', [18,19,20,21,22,23,24],10,false);
           pj.animations.add('agachado',[33],10,false);
           pj.animations.add('victoria',[34,35,36,37,38],7,false);
 
