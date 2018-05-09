@@ -29,7 +29,7 @@ var saltoPj2;
       function preload(){
 
             juego.load.image('Fondo', 'Imagenes/Fondo_Juego.jpg');
-            juego.load.spritesheet('personajes', 'Quieto/pj.png',160,165,32)
+            juego.load.spritesheet('personajes', 'Quieto/completo.png',200,165,62)
             juego.load.spritesheet('golpe', 'Imagenes/golpe.png',290,400)
             juego.load.spritesheet('enemigo', 'Quieto/Personajes.png',160,160)
             juego.load.audio('audio1','Musica/GameOver.mp3');
