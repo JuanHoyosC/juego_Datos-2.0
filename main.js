@@ -110,7 +110,8 @@ var cont = 0;
           Txt4.text='';
           Txt3.text=segundos;
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
-          Txt.text='Vida jugador 1 : '+vida_Pj;     
+          Txt.text='Vida jugador 1 : '+vida_Pj;
+           setTimeout(tiempo,1000);      
             }else{
               if(ganadas_pj == 2){
                  Txt4.text='EL GANADOR ES EL JUGADOR 1';
