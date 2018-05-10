@@ -152,7 +152,7 @@ var reinicio = false;
                  }
                      
                  if(vida_Pj  == vida_Pj2 ){
-                    Txt4 = juego.add.text(765,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
+                    Txt4 = juego.add.text(865,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
                     Txt4.text='EMPATE';
                     moverese = false;   
                     setTimeout(round,4000);
