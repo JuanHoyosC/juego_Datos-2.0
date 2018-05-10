@@ -111,7 +111,8 @@ var reinicio = false;
           Txt3.text=segundos;
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
           Txt.text='Vida jugador 1 : '+vida_Pj;
-          reiniciar = false;     
+          reiniciar = false;
+          moverse = true;
           setTimeout(tiempo,1000);      
             }else{
               Txt4 = juego.add.text(475,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
@@ -140,21 +141,21 @@ var reinicio = false;
                if(vida_Pj  < vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 2';
                      ganadas_pj2++;
-                     moverese = false;
+                     moverse = false;
                      setTimeout(round,4000);
                  }     
                      if(vida_Pj  > vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';
                     pj.animations.play('victoria');
                     ganadas_pj++;
-                    moverese = false;
+                    moverse = false;
                     setTimeout(round,4000);
                  }
                      
                  if(vida_Pj  == vida_Pj2 ){
                     Txt4 = juego.add.text(865,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
                     Txt4.text='EMPATE';
-                    moverese = false;   
+                    moverse = false;   
                     setTimeout(round,4000);
                  }
                }
@@ -305,6 +306,7 @@ var reinicio = false;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1'; 
                     moverse = false;
                     reiniciar = true;
+                    ganadas_pj++;   
                     setTimeout(round,4000);   
                           
                  }
@@ -324,6 +326,7 @@ var reinicio = false;
                     pj.animations.play('victoria');   
                     moverse = false;
                     reiniciar = true;
+                    ganadas_pj++;
                     setTimeout(round,4000);
                     
                  }
