@@ -129,7 +129,7 @@ var reinicio = false;
         }
 
         function tiempo(){     
-               if(segundos != 0 && reinicio == true){
+               if(segundos != 0 && reinicio == false){
                segundos =segundos-1;
                Txt3.text=segundos;
                setTimeout(tiempo,1000);
