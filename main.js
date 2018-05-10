@@ -115,11 +115,14 @@ var reinicio = false;
           setTimeout(tiempo,1000);      
             }else{
               if(ganadas_pj == 2){
-                 Txt4.text='EL GANADOR ES EL JUGADOR 1';
+                 Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
+                   moverse = false; 
+                   pj.animations.play('visctoria');  
                  }
                   
                if(ganadas_pj2 == 2){
-                 Txt4.text='EL GANADOR ES EL JUGADOR 1';
+                  moverse = false;  
+                 Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                }
             }    
               
