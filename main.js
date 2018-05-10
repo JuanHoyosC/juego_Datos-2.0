@@ -114,7 +114,8 @@ var reinicio = false;
           reiniciar = false;     
           setTimeout(tiempo,1000);      
             }else{
-              if(ganadas_pj == 2){
+              Txt4 = juego.add.text(475,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
+              if(ganadas_pj == 2){                 
                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                    moverse = false; 
                    pj.animations.play('visctoria');  
@@ -149,6 +150,7 @@ var reinicio = false;
                  }
                      
                  if(vida_Pj  == vida_Pj2 ){
+                    Txt4 = juego.add.text(juego.width/2,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
                     Txt4.text='EMPATE';
                  }
                }
