@@ -97,7 +97,7 @@ var cont = 0;
         }
 
         function round(){
-         if(ganadas_pj != 2 || ganadas_pj2 != 2)){
+         if(ganadas_pj != 2 || ganadas_pj2 != 2){
           vida_Pj = 1000;
           vida_Pj2 = 1000;
           segundos = 100;
