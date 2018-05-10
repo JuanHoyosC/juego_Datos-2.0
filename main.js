@@ -97,7 +97,7 @@ var reinicio = false;
         }
 
         function round(){
-         Txt4.text='';
+         Txt4.text=' ';
          if(ganadas_pj != 2 && ganadas_pj2 != 2){
           vida_Pj = 1000;
           vida_Pj2 = 1000;
@@ -111,7 +111,7 @@ var reinicio = false;
           Txt3.text=segundos;
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
           Txt.text='Vida jugador 1 : '+vida_Pj;
-          reiniciar = false;
+          reinicio = false;
           moverse = true;
           setTimeout(tiempo,1000);      
             }else{
@@ -119,14 +119,14 @@ var reinicio = false;
               if(ganadas_pj == 2){            
                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                    moverse = false; 
-                    reiniciar = true;
+                    reinicio = true;
                    pj.animations.play('visctoria');  
                  }
                   
                if(ganadas_pj2 == 2){
                   moverse = false;  
                   Txt4.text='';
-                  reiniciar = true;
+                  reinicio= true;
                   Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                }
             }    
@@ -306,7 +306,7 @@ var reinicio = false;
                     pj.animations.play('victoria');
                     Txt4.text='EL GANADOR ES EL JUGADOR 1'; 
                     moverse = false;
-                    reiniciar = true;
+                    reinicio = true;
                     ganadas_pj++;
                       
                     setTimeout(round,4000);   
@@ -327,7 +327,7 @@ var reinicio = false;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';
                     pj.animations.play('victoria');   
                     moverse = false;
-                    reiniciar = true;
+                    reinicio = true;
                    
                     ganadas_pj++;
                     setTimeout(round,4000);
@@ -351,7 +351,7 @@ var reinicio = false;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';   
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
-                    reiniciar = true;
+                    reinicio = true;
                     setTimeout(round,4000);   
                  }
  
@@ -369,9 +369,8 @@ var reinicio = false;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';   
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
-                    moverse = false;
-                     
-                    reiniciar = true;   
+                    moverse = false;   
+                    reinicio = true;   
                     setTimeout(round,4000);   
                  }
  
