@@ -18,7 +18,7 @@ var ganadas_pj = 0;
 var ganadas_pj2 = 0;
 var agachado = false;
 var segundos = 100;
-var cont = 0;
+var reinicio = false;
 
 
       function preload(){
@@ -111,6 +111,7 @@ var cont = 0;
           Txt3.text=segundos;
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
           Txt.text='Vida jugador 1 : '+vida_Pj;
+          reiniciar = false;     
           setTimeout(tiempo,1000);      
             }else{
               if(ganadas_pj == 2){
@@ -125,7 +126,7 @@ var cont = 0;
         }
 
         function tiempo(){     
-               if(segundos != 0){
+               if(segundos != 0 || reinicio != true){
                segundos =segundos-1;
                Txt3.text=segundos;
                setTimeout(tiempo,1000);
@@ -294,6 +295,7 @@ var cont = 0;
                     pj.animations.play('victoria');
                     Txt4.text='EL GANADOR ES EL JUGADOR 1'; 
                     moverse = false;
+                    reiniciar = true;
                     setTimeout(round,4000);   
                           
                  }
@@ -312,6 +314,7 @@ var cont = 0;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';
                     pj.animations.play('victoria');   
                     moverse = false;
+                    reiniciar = true;
                     setTimeout(round,4000);
                     
                  }
@@ -333,6 +336,7 @@ var cont = 0;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';   
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
+                    reiniciar = true;
                     setTimeout(round,4000);   
                  }
  
@@ -351,6 +355,7 @@ var cont = 0;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                     moverse = false;
+                    reiniciar = true;   
                     setTimeout(round,4000);   
                  }
  
