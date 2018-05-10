@@ -115,7 +115,8 @@ var reinicio = false;
           setTimeout(tiempo,1000);      
             }else{
               Txt4 = juego.add.text(475,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
-              if(ganadas_pj == 2){                 
+              if(ganadas_pj == 2){      
+                 Txt4.text='';   
                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                    moverse = false; 
                    pj.animations.play('visctoria');  
@@ -123,6 +124,7 @@ var reinicio = false;
                   
                if(ganadas_pj2 == 2){
                   moverse = false;  
+                  Txt4.text='';
                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                }
             }    
