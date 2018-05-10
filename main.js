@@ -82,6 +82,7 @@ var cont = 0;
           pj.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
           pj.animations.add('ataque3',[9,10,11,12,13,14,15,16,17,18],7,false);
           pj2.animations.add('daño',[0,1,2,3,4,5,6,7,8,18],6,false);   
+          pj2.animations.add('muerte',[62,63,64,65,66,67],7,false);   
           pj.animations.play('principal');
           pj2.animations.play('principal');
           setTimeout(tiempo,1000);           
@@ -318,7 +319,7 @@ var cont = 0;
                  vida_Pj2 = vida_Pj2-50;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
-                    pj2.kill();
+                    pj2.animations.play('muerte');   
                     ganadas_pj++;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
@@ -333,7 +334,7 @@ var cont = 0;
                  vida_Pj2 = vida_Pj2-100;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
-                    pj2.kill();
+                    pj2.animations.play('muerte'); 
                     ganadas_pj++;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
