@@ -287,7 +287,7 @@ var cont = 0;
                  vida_Pj2 = vida_Pj2-50;
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
-                    pj2.kill();
+                    pj2.animations.play('muerte'); 
                     Txt2.text='Vida jugador 2 : 0'; 
                     setTimeout(round,4000);   
                     pj.animations.play('victoria');
@@ -302,7 +302,7 @@ var cont = 0;
                   pj2.animations.play('daño');
                  Txt2.text='Vida jugador 2 : '+vida_Pj2;        
                  if(vida_Pj2 <= 0){
-                    pj2.kill();
+                    pj2.animations.play('muerte'); 
                     Txt2.text='Vida jugador 2 : 0';
                     setTimeout(round,4000);
                     pj.animations.play('victoria');
