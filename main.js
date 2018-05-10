@@ -307,7 +307,7 @@ var reinicio = false;
                     moverse = false;
                     reiniciar = true;
                     ganadas_pj++;
-                    segundos = 0;   
+                    Txt3.text='0';  
                     setTimeout(round,4000);   
                           
                  }
@@ -327,7 +327,7 @@ var reinicio = false;
                     pj.animations.play('victoria');   
                     moverse = false;
                     reiniciar = true;
-                    segundos = 0;   
+                    Txt3.text='0';  
                     ganadas_pj++;
                     setTimeout(round,4000);
                     
@@ -351,7 +351,7 @@ var reinicio = false;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                     reiniciar = true;
-                    segundos = 0;
+                    Txt3.text='0';
                     setTimeout(round,4000);   
                  }
  
@@ -370,7 +370,7 @@ var reinicio = false;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                     moverse = false;
-                    segundos = 0;   
+                    Txt3.text='0';  
                     reiniciar = true;   
                     setTimeout(round,4000);   
                  }
