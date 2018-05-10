@@ -97,7 +97,7 @@ var cont = 0;
         }
 
         function round(){
-         if(cont <= 2){
+         if(ganadas_pj2<= 2 || ganadas_pj<= 2){
           vida_Pj = 1000;
           vida_Pj2 = 1000;
           segundos = 100;
@@ -108,6 +108,9 @@ var cont = 0;
           pj.animations.play('principal');
           pj2.animations.play('principal');     
           Txt4.text='';
+          Txt3.text=segundos;
+          Txt2.text='Vida jugador 2 : '+vida_Pj2;
+          Txt.text='Vida jugador 1 : '+vida_Pj;     
             }else{
               if(ganadas_pj == 2){
                  Txt4.text='EL GANADOR ES EL JUGADOR 1';
