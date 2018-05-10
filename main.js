@@ -97,7 +97,7 @@ var cont = 0;
         }
 
         function round(){
-         if(cont<= 2){
+         if(ganadas_pj != 2 || ganadas_pj != 2)){
           vida_Pj = 1000;
           vida_Pj2 = 1000;
           segundos = 100;
@@ -111,7 +111,7 @@ var cont = 0;
           Txt3.text=segundos;
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
           Txt.text='Vida jugador 1 : '+vida_Pj;
-           setTimeout(tiempo,1000);      
+          setTimeout(tiempo,1000);      
             }else{
               if(ganadas_pj == 2){
                  Txt4.text='EL GANADOR ES EL JUGADOR 1';
@@ -133,7 +133,6 @@ var cont = 0;
                if(vida_Pj  < vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 2';
                      ganadas_pj2++;
-                     cont++;
                      moverese = false;
                      setTimeout(round,4000);
                  }     
@@ -142,7 +141,6 @@ var cont = 0;
                     pj.animations.play('victoria');
                     ganadas_pj++;
                     moverese = false;
-                    cont++;
                     setTimeout(round,4000);
                  }
                      
@@ -295,10 +293,9 @@ var cont = 0;
                     Txt2.text='Vida jugador 2 : 0'; 
                     pj.animations.play('victoria');
                     Txt4.text='EL GANADOR ES EL JUGADOR 1'; 
-                      cont++;
+                    moverse = false;
                     setTimeout(round,4000);   
-                       
-                    
+                          
                  }
  
              }
@@ -314,7 +311,7 @@ var cont = 0;
                     Txt2.text='Vida jugador 2 : 0';
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';
                     pj.animations.play('victoria');   
-                         cont++;
+                    moverse = false;
                     setTimeout(round,4000);
                     
                  }
@@ -332,7 +329,7 @@ var cont = 0;
                  if(vida_Pj2 <= 0){
                     pj2.animations.play('muerte');   
                     ganadas_pj++;
-                    cont++;
+                    moverse = false;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';   
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
@@ -353,7 +350,7 @@ var cont = 0;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';   
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
-                    cont++;
+                    moverse = false;
                     setTimeout(round,4000);   
                  }
  
