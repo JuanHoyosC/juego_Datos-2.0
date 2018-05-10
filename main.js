@@ -306,7 +306,8 @@ var reinicio = false;
                     Txt4.text='EL GANADOR ES EL JUGADOR 1'; 
                     moverse = false;
                     reiniciar = true;
-                    ganadas_pj++;   
+                    ganadas_pj++;
+                    segundos = 0;   
                     setTimeout(round,4000);   
                           
                  }
@@ -326,6 +327,7 @@ var reinicio = false;
                     pj.animations.play('victoria');   
                     moverse = false;
                     reiniciar = true;
+                    segundos = 0;   
                     ganadas_pj++;
                     setTimeout(round,4000);
                     
@@ -349,6 +351,7 @@ var reinicio = false;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                     reiniciar = true;
+                    segundos = 0;
                     setTimeout(round,4000);   
                  }
  
@@ -367,6 +370,7 @@ var reinicio = false;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                     moverse = false;
+                    segundos = 0;   
                     reiniciar = true;   
                     setTimeout(round,4000);   
                  }
