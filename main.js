@@ -1,5 +1,5 @@
 var juego = new Phaser.Game(1950, 970, Phaser.AUTO, '', {preload: preload, create: create, update: update});
-var pj,saltoPj2,pj2,Tecla,mover,TXT, TXT2,TXT3,TXT4;
+var pj, saltoPj2 ,pj2 ,Tecla ,mover ,TXT , TXT2 ,TXT3 ,TXT4 ;
 var puño = false;
 var izquierda = -1.7;
 var derecha = 1.7;
