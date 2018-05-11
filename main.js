@@ -335,7 +335,6 @@ var reinicio = false;
                     pj.animations.play('victoria');   
                     moverse = false;
                     reinicio = true;
-                   
                     ganadas_pj++;
                     setTimeout(round,4000);
                     
