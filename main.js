@@ -140,7 +140,7 @@ var reinicio = false;
                setTimeout(tiempo,1000);
                }
               
-              if(seundos == 0){ 
+              if(segundos == 0){ 
                  if(vida_Pj  < vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 2';
                      ganadas_pj2++;
