@@ -120,7 +120,7 @@ var reinicio = false;
                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                    moverse = false; 
                     reinicio = true;
-                   pj.animations.play('visctoria');  
+                   pj.animations.play('victoria');  
                  }
                   
                if(ganadas_pj2 == 2){
