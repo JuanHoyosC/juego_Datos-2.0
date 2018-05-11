@@ -19,6 +19,7 @@ var ganadas_pj2 = 0;
 var agachado = false;
 var segundos = 100;
 var reinicio = false;
+var cont;
 
 
       function preload(){
@@ -98,7 +99,7 @@ var reinicio = false;
 
         function round(){
          Txt4.text=' ';
-         if(ganadas_pj != 2 && ganadas_pj2 != 2){
+         if(cont != 3 && ganadas_pj !=2 && ganadas_pj2 !=2 ){
           vida_Pj = 1000;
           vida_Pj2 = 1000;
           segundos = 100;
@@ -116,19 +117,28 @@ var reinicio = false;
           setTimeout(tiempo,1000);      
             }else{
               Txt4 = juego.add.text(475,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
-              if(ganadas_pj == 2){            
+              if(ganadas_pj  >  ganadas_pj2 ){            
                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                    moverse = false; 
                     reinicio = true;
                    pj.animations.play('victoria');  
                  }
                   
-               if(ganadas_pj2 == 2){
+               if(ganadas_pj2  >  ganadas_pj ){
                   moverse = false;  
                   Txt4.text='';
                   reinicio= true;
                   Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
                }
+                  
+                  if(ganadas_pj2 == 0 && ganadas_pj == 0){
+                  moverse = false;  
+                  Txt4.text='';
+                  reinicio= true;
+                  Txt4 = juego.add.text(860,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
+                  Txt4.text='JUEGO EMPATADO';
+                  }
+                  
             }    
               
         }
@@ -144,22 +154,25 @@ var reinicio = false;
                     Txt4.text='EL GANADOR ES EL JUGADOR 2';
                      ganadas_pj2++;
                      moverse = false;
-                     setTimeout(round,4000);
-                     
+                     cont = cont+1;  
+                     setTimeout(round,4000); 
                  }     
                     if(vida_Pj  > vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 1';
                     pj.animations.play('victoria');
                     ganadas_pj++;
                     moverse = false;
-                    setTimeout(round,4000);
+                    cont = cont+1;   
+                    setTimeout(round,4000);         
                  }
                      
                  if(vida_Pj  == vida_Pj2 ){
                     Txt4 = juego.add.text(865,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
                     Txt4.text='EMPATE';
-                    moverse = false;   
+                    moverse = false; 
+                    cont = cont+1;   
                     setTimeout(round,4000);
+                    
                  }
               }
                
@@ -315,7 +328,7 @@ var reinicio = false;
                     moverse = false;
                     reinicio = true;
                     ganadas_pj++;
-                      
+                    cont = cont+1;
                     setTimeout(round,4000);   
                           
                  }
@@ -336,6 +349,7 @@ var reinicio = false;
                     moverse = false;
                     reinicio = true;
                     ganadas_pj++;
+                    cont = cont+1;   
                     setTimeout(round,4000);
                     
                  }
@@ -358,6 +372,7 @@ var reinicio = false;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                     reinicio = true;
+                    cont = cont+1;   
                     setTimeout(round,4000);   
                  }
  
@@ -376,7 +391,8 @@ var reinicio = false;
                     Txt2.text='Vida jugador 2 : 0';  
                     pj.animations.play('victoria');
                     moverse = false;   
-                    reinicio = true;   
+                    reinicio = true;
+                    cont = cont+1;
                     setTimeout(round,4000);   
                  }
  
