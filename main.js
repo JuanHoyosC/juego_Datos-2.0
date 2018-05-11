@@ -138,8 +138,10 @@ var reinicio = false;
                segundos =segundos-1;
                Txt3.text=segundos;
                setTimeout(tiempo,1000);
-               }else{
-               if(vida_Pj  < vida_Pj2 ){
+               }
+              
+              if(seundos == 0){ 
+                 if(vida_Pj  < vida_Pj2 ){
                     Txt4.text='EL GANADOR ES EL JUGADOR 2';
                      ganadas_pj2++;
                      moverse = false;
@@ -159,7 +161,7 @@ var reinicio = false;
                     moverse = false;   
                     setTimeout(round,4000);
                  }
-               }
+                 }
               
         }
 
