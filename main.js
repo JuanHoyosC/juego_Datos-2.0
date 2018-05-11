@@ -19,7 +19,7 @@ var ganadas_pj2 = 0;
 var agachado = false;
 var segundos = 100;
 var reinicio = false;
-var cont;
+var cont = 0;
 
 
       function preload(){
