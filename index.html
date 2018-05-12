@@ -9,11 +9,23 @@
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <script src="phaser.js" type="text/javascript"></script>
    <script src="main.js" type="text/javascript"></script>
-   <link href="visual.css" rel="stylesheet" type="text/css">		
+   <link href="visual.css" rel="stylesheet" type="text/css">
+	 <link rel = "stylesheet" href = "main.css">
 
  </head>
  <body>
-   <div id='preloader'>
+	  <div id ="contenedor">
+          <div id = "carga"></div>
+         </div>
+   <script>
+        window.onload = function(){
+            var contenedor1 = document.getElementById('contenedor');
+            contenedor1.style.visibility = 'hidden';
+            contenedor1.style.opacity = '0';
+            
+            
+        }
+    </script>
 	
  </body>
 </html>
