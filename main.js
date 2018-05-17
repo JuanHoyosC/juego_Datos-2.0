@@ -298,7 +298,7 @@ var saltar_pj2 = false;
               agachado = false;
           }
           
-         if(pj2.position.y == juego.height-65 || pj.position.y == juego.height-65 ){
+         if(pj2.position.y == juego.height-65 ){
             salto = false;
             suelo = true;
             saltar_pj2 = false;
