@@ -20,6 +20,7 @@ var agachado = false;
 var segundos = 100;
 var reinicio = false;
 var cont = 0;
+var saltar_pj2 = false,
 
 
       function preload(){
@@ -177,11 +178,8 @@ var cont = 0;
               }
                
                
-               }
-              
-              
-              
-        }
+          }         
+      }
 
          function update () {
          atacar = true;
@@ -222,8 +220,8 @@ var cont = 0;
               pj.animations.play('ataque2');
               moverse = false;
               setTimeout(dd,1500);
-                  pj.animation('principal');
-                  agachado =false;
+              pj.animation('principal');
+              agachado =false;
             }
         }
         
@@ -254,6 +252,7 @@ var cont = 0;
          pj2.body.velocity.y= -550;
          salto = true;
          suelo = false;
+         saltar_pj2= true;
        }
 
            if(juego.input.keyboard.isDown(Phaser.KeyCode.A) && moverse == true){
@@ -299,10 +298,13 @@ var cont = 0;
               agachado = false;
           }
           
-         if(pj2.position.y == juego.height-65 ){
+         if(pj2.position.y == juego.height-65 || pj.position.y == juego.height-65 ){
             salto = false;
             suelo = true;
+            saltar_pj2 = false;
            }
+               
+               
                
           choque = false;
           puño = false;
