@@ -222,6 +222,8 @@ var cont = 0;
               pj.animations.play('ataque2');
               moverse = false;
               setTimeout(dd,1500);
+                  pj.animation('principal');
+                  agachado =false;
             }
         }
         
