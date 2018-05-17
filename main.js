@@ -361,7 +361,7 @@ var saltar_pj2 = false;
              }
          }
             
-              if(patada == true && saltar_pj2 = false ){      
+              if(patada == true && saltar_pj2 == false ){      
                if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= -190 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 190){          
                  puño = false;
                  patada = false;
