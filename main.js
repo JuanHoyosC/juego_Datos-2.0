@@ -20,7 +20,7 @@ var agachado = false;
 var segundos = 100;
 var reinicio = false;
 var cont = 0;
-var saltar_pj2 = false,
+var saltar_pj2 = false;
 
 
       function preload(){
