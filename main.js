@@ -21,6 +21,7 @@ var segundos = 100;
 var reinicio = false;
 var cont = 0;
 var saltar_pj2 = false;
+var victoria;
 
 
       function preload(){
@@ -30,6 +31,7 @@ var saltar_pj2 = false;
             juego.load.spritesheet('golpe', 'Imagenes/golpe.png',290,400);
             juego.load.spritesheet('enemigo', 'Quieto/PJ.png',200,165,70);
             juego.load.audio('audio1','Musica/GameOver.mp3');
+            juego.load.audio('ganaste','Imagenes/Ganaste_audio.mp3');
         }
 
 
@@ -39,6 +41,8 @@ var saltar_pj2 = false;
           juego.add.tileSprite(0,0,1950,970, 'Fondo');
           pj2 = juego.add.sprite(juego.width-300,juego.height-65, 'enemigo');
           pj = juego.add.sprite(300,juego.height-65, 'personajes');
+               
+          victoria= juego.add.audio('ganaste');
 
           //le da tamaño al sprite y le da su punto de apoyo
           pj.anchor.setTo(0.5, 1);
@@ -120,6 +124,7 @@ var saltar_pj2 = false;
               Txt4 = juego.add.text(475,385, '', {fontSize: '50px', fill: 'white',fontFamily: 'Pixeled'});
               if(ganadas_pj  >  ganadas_pj2 ){            
                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
+                    victoria.play();
                    moverse = false; 
                     reinicio = true;
                    pj.animations.play('victoria');  
