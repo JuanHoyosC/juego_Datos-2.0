@@ -206,7 +206,6 @@ var victoria;
               puño = true;
               setTimeout(dd,1500);
               pj.animations.play('ataque3');
-              pj2.animations.play('daño');
               agachado = false;
             }
               
