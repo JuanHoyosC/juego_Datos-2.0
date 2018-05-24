@@ -14,6 +14,8 @@ var seguir = false;
 var atacar = false;
 var Correr = 'correr';
 var Correr1 = 'correrAtras';
+var Correrpj2 = 'correr';
+var Correr2pj2 = 'correrAtras';
 var ganadas_pj = 0;
 var ganadas_pj2 = 0;
 var agachado = false;
@@ -240,6 +242,8 @@ var victoria;
               pj2.scale.setTo(1.7);   
               Correr = 'correrAtras';
               Correr1 ='correr';
+              correrpj2 = 'correrAtras';
+              correr2pj2 ='correr';
            }
                
            if(pj.position.x < pj2.position.x){
@@ -249,6 +253,8 @@ var victoria;
               izquierda = 1.7;
               Correr1 = 'correrAtras';
               Correr ='correr';
+              correrpj2 = 'correr';
+              correr2pj2 ='correrAtras';
            }
 
 
