@@ -316,7 +316,7 @@ var azul;
 
            if(juego.input.keyboard.isDown(Phaser.KeyCode.A) && moverse == true){
              pj2.body.velocity.x = -480;
-                 pj2.animations.play(correrpj2);
+             pj2.animations.play(correrpj2);
          }
 
          if(juego.input.keyboard.isDown(Phaser.KeyCode.D) && moverse == true){
