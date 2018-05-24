@@ -200,7 +200,7 @@ var victoria;
         //Golpes al enemigo
 
         juego.input.keyboard.onUpCallback = function(key){
-            if(key.keyCode === Phaser.KeyCode.j){
+            if(key.keyCode === Phaser.KeyCode.J){
               seguir = true;
               moverse = false;
               puño = true;
@@ -209,7 +209,7 @@ var victoria;
               agachado = false;
             }
               
-              if(key.keyCode === Phaser.KeyCode.k){
+              if(key.keyCode === Phaser.KeyCode.K){
               seguir = true;
               moverse = false;
               puño = true;
@@ -218,7 +218,7 @@ var victoria;
               agachado = false;
             }
 
-            if(key.keyCode === Phaser.KeyCode.l ){
+            if(key.keyCode === Phaser.KeyCode.L ){
               puño = true;
               seguir = true;
               pj.animations.play('ataque2');
