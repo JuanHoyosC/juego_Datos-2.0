@@ -25,6 +25,8 @@ var cont = 0;
 var saltar_pj2 = false;
 var victoria;
 var puño_j2 = false;
+var rojo;
+var azul;
 
 
       function preload(){
@@ -32,6 +34,8 @@ var puño_j2 = false;
             juego.load.image('Fondo', 'Imagenes/Fondo_Juego.jpg');
             juego.load.spritesheet('personajes', 'Quieto/PJ.png',200,165,70);
             juego.load.spritesheet('golpe', 'Imagenes/golpe.png',290,400);
+            juego.load.spritesheet('rojo', 'Quieto/roja.png',548,720;
+            juego.load.spritesheet('azul', 'Quieto/azul.png',245,245);
             juego.load.spritesheet('enemigo', 'Quieto/PJ.png',200,165,70);
             juego.load.audio('audio1','Musica/GameOver.mp3');
             juego.load.audio('ganaste','Imagenes/Ganaste_audio.mp3');
