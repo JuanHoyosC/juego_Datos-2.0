@@ -200,7 +200,7 @@ var victoria;
         //Golpes al enemigo
 
         juego.input.keyboard.onUpCallback = function(key){
-            if(key.keyCode === Phaser.KeyCode.K && moverse == true && atacar == true){
+            if(key.keyCode === Phaser.KeyCode.j && moverse == true && atacar == true){
               seguir = true;
               moverse = false;
               puño = true;
@@ -209,7 +209,7 @@ var victoria;
               agachado = false;
             }
               
-              if(key.keyCode === Phaser.KeyCode.Z && moverse == true && atacar == true){
+              if(key.keyCode === Phaser.KeyCode.k && moverse == true && atacar == true){
               seguir = true;
               moverse = false;
               puño = true;
@@ -218,8 +218,8 @@ var victoria;
               agachado = false;
             }
 
-            if(key.keyCode === Phaser.KeyCode.X && moverse == true && atacar == true && agachado == true){
-              patada = true;
+            if(key.keyCode === Phaser.KeyCode.l && moverse == true && atacar == true){
+              puño = true;
               seguir = true;
               pj.animations.play('ataque2');
               moverse = false;
@@ -359,51 +359,11 @@ var victoria;
                     ganadas_pj++;
                     cont = cont+1;   
                     setTimeout(round,4000);
-                    
+                     
                  }
  
              }
          }
             
-              if(patada == true && saltar_pj2 == false ){      
-               if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= -190 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 190){          
-                 puño = false;
-                 patada = false;
-                 pj2.animations.play('daño');
-                 vida_Pj2 = vida_Pj2-50;
-                 Txt2.text='Vida jugador 2 : '+vida_Pj2;        
-                 if(vida_Pj2 <= 0){
-                    pj2.animations.play('muerte');   
-                    ganadas_pj++;
-                    moverse = false;
-                    Txt4.text='EL GANADOR ES EL JUGADOR 1';   
-                    Txt2.text='Vida jugador 2 : 0';  
-                    pj.animations.play('victoria');
-                    reinicio = true;
-                    cont = cont+1;   
-                    setTimeout(round,4000);   
-                 }
- 
-             }
-                
-                if(pj.position.x - pj2.position.x >= -190  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  >=0   && pj.position.x -pj2.position.x  <= 190){          
-                 puño = false;
-                 patada = false;
-                 pj2.animations.play('daño');
-                 vida_Pj2 = vida_Pj2-100;
-                 Txt2.text='Vida jugador 2 : '+vida_Pj2;        
-                 if(vida_Pj2 <= 0){
-                    pj2.animations.play('muerte'); 
-                    ganadas_pj++;
-                    Txt4.text='EL GANADOR ES EL JUGADOR 1';   
-                    Txt2.text='Vida jugador 2 : 0';  
-                    pj.animations.play('victoria');
-                    moverse = false;   
-                    reinicio = true;
-                    cont = cont+1;
-                    setTimeout(round,4000);   
-                 }
- 
-             }
-         }
+             
       }
