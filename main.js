@@ -48,8 +48,8 @@ var azul;
           juego.add.tileSprite(0,0,1950,970, 'Fondo');
           pj2 = juego.add.sprite(juego.width-300,juego.height-65, 'enemigo');
           pj = juego.add.sprite(300,juego.height-65, 'personajes');
-          azul = juego.add.sprite(juego.width-300,juego.height-165, 'azul');
-          rojo = juego.add.sprite(300,juego.height-165, 'rojo');
+          azul = juego.add.sprite(juego.width-300,juego.height-265, 'azul');
+          rojo = juego.add.sprite(300,juego.height-265, 'rojo');
                
           victoria= juego.add.audio('ganaste');
 
@@ -59,9 +59,9 @@ var azul;
           pj2.anchor.setTo(0.5,1);
           pj.scale.setTo(1.7);
           azul.anchor.setTo(0.5, 1);
-          azul.scale.setTo(0.8);
+          azul.scale.setTo(0.1);
           rojo.anchor.setTo(0.5,1);
-          rojo.scale.setTo(0.8);
+          rojo.scale.setTo(0.1);
           //Textos
           Txt2 = juego.add.text(juego.world.width-380, 22, 'Puntos: 0', {fontSize: '27px', fill: 'white',fontFamily: 'Pixeled'});
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
