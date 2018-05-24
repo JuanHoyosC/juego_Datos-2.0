@@ -48,7 +48,6 @@ var azul;
           juego.add.tileSprite(0,0,1950,970, 'Fondo');
           pj2 = juego.add.sprite(juego.width-300,juego.height-65, 'enemigo');
           pj = juego.add.sprite(300,juego.height-65, 'personajes');
-          azul = juego.add.sprite(juego.width-300,juego.height-310, 'azul');
           rojo = juego.add.sprite(300,juego.height-310, 'rojo');
                
           victoria= juego.add.audio('ganaste');
@@ -58,8 +57,6 @@ var azul;
           pj2.scale.setTo(-1.7,1.7);
           pj2.anchor.setTo(0.5,1);
           pj.scale.setTo(1.7);
-          azul.anchor.setTo(0.5, 1);
-          azul.scale.setTo(0.2);
           rojo.anchor.setTo(0.5,1);
           rojo.scale.setTo(0.08);
           //Textos
@@ -311,7 +308,7 @@ var azul;
 
         if(juego.input.keyboard.isDown(Phaser.KeyCode.W)  && suelo == true && moverse == true){
          pj2.body.velocity.y= -550;
-         azul.position.y = pj2.position.y +610;  
+        
          salto = true;
          suelo = false;
          saltar_pj2= true;
@@ -319,13 +316,12 @@ var azul;
 
            if(juego.input.keyboard.isDown(Phaser.KeyCode.A) && moverse == true){
              pj2.body.velocity.x = -480;
-             azul.position.x = pj2.position.x;
                  pj2.animations.play(correrpj2);
          }
 
          if(juego.input.keyboard.isDown(Phaser.KeyCode.D) && moverse == true){
             pj2.body.velocity.x = 480;
-            azul.position.x = pj2.position.x;
+      
                 pj2.animations.play(correr2pj2);
         }
 
