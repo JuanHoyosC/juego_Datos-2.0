@@ -366,12 +366,8 @@ var azul;
             suelo = true;
             saltar_pj2 = false;
            }
-            if(pj.position.y == juego.height-65 ){
-            rojo.position.y = juego.height-310;
-           }
-               
-               
-               
+
+                 
           choque = false;
           puño = false;
           puño_j2 = false;     
