@@ -355,6 +355,7 @@ var puño_j2 = false;
                
           choque = false;
           puño = false;
+          puño_j2 = false;     
           patada = false;
 
   }
