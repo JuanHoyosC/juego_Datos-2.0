@@ -81,6 +81,8 @@ var victoria;
           pj2.animations.add('principal', [18],10,false);
           pj.animations.add('correr', [33,34,35,36,37,38,39,40],10,false);
           pj.animations.add('correrAtras', [40,39,38,37,36,35,34,33],10,false);
+          pj2.animations.add('correr', [33,34,35,36,37,38,39,40],10,false);
+          pj2.animations.add('correrAtras', [40,39,38,37,36,35,34,33],10,false);
           pj.animations.add('ataque', [41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56],15,false);
           pj2.animations.add('quieto', [18,19,20,21,22,23,24],10,false);
           pj.animations.add('agachado',[26],10,false);
@@ -261,12 +263,12 @@ var victoria;
 
            if(juego.input.keyboard.isDown(Phaser.KeyCode.A) && moverse == true){
              pj2.body.velocity.x = -480;
-                 pj2.scale.setTo(-1.7, 1.7);
+                 pj2.animations.play(correr1);
          }
 
          if(juego.input.keyboard.isDown(Phaser.KeyCode.D) && moverse == true){
             pj2.body.velocity.x = 480;
-                pj2.scale.setTo(1.7);
+                pj2.animations.play(correr);
         }
 
 
