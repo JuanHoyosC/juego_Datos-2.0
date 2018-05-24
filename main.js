@@ -318,14 +318,14 @@ var azul;
        }
 
            if(juego.input.keyboard.isDown(Phaser.KeyCode.A) && moverse == true){
-             pj2.body.velocity.x =pj2.position.x;
-             azul.position.x = -480;
+             pj2.body.velocity.x = -480;
+             azul.position.x = pj2.position.x;
                  pj2.animations.play(correrpj2);
          }
 
          if(juego.input.keyboard.isDown(Phaser.KeyCode.D) && moverse == true){
-            pj2.body.velocity.x = pj2.position.x;
-            azul.position.x = 480;
+            pj2.body.velocity.x = 480;
+            azul.position.x = pj2.position.x;
                 pj2.animations.play(correr2pj2);
         }
 
