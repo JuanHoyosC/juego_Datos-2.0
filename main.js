@@ -7,8 +7,8 @@ var choque = false;
 var patada = false;
 var salto = false;
 var suelo = false;
-var vida_Pj = 1000;
-var vida_Pj2 = 1000;
+var vida_Pj = 2000;
+var vida_Pj2 = 2000;
 var moverse = true;
 var seguir = false;
 var atacar = false;
@@ -311,7 +311,7 @@ var azul;
 
         if(juego.input.keyboard.isDown(Phaser.KeyCode.W)  && suelo == true && moverse == true){
          pj2.body.velocity.y= -550;
-         azul.position.y+= 20;  
+         azul.position.y = pj2.position.y +610;  
          salto = true;
          suelo = false;
          saltar_pj2= true;
