@@ -146,7 +146,7 @@ var puño_j2 = false;
                   moverse = false;  
                   Txt4.text='';
                   reinicio= true;
-                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 1';
+                  Txt4.text='EL GANADOR DEFINITIVO ES EL JUGADOR 2';
                }
                   
                   if(ganadas_pj2 == 0 && ganadas_pj == 0){
