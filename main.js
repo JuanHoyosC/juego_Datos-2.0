@@ -35,7 +35,7 @@ var azul;
             juego.load.spritesheet('personajes', 'Quieto/PJ.png',200,165,70);
             juego.load.spritesheet('golpe', 'Imagenes/golpe.png',290,400);
             juego.load.spritesheet('rojo', 'Quieto/roja.png',548,720);
-            juego.load.spritesheet('azul', 'Quieto/azul.png',245,245);
+    
             juego.load.spritesheet('enemigo', 'Quieto/PJ.png',200,165,70);
             juego.load.audio('audio1','Musica/GameOver.mp3');
             juego.load.audio('ganaste','Imagenes/Ganaste_audio.mp3');
@@ -76,8 +76,7 @@ var azul;
           //ACTIVA LAS FISICAS AL JUGADOR
           juego.physics.arcade.enable(pj);
           juego.physics.arcade.enable(pj2);
-          juego.physics.arcade.enable(rojo);
-          juego.physics.arcade.enable(azul);     
+          juego.physics.arcade.enable(rojo);     
           //EL JUGADOR NO PUEDE REBOTAR
           pj.body.bounce.y = 0;
           pj2.body.bounce.y = 0;
