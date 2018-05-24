@@ -24,6 +24,7 @@ var reinicio = false;
 var cont = 0;
 var saltar_pj2 = false;
 var victoria;
+var puño_j2 = false;
 
 
       function preload(){
@@ -86,11 +87,15 @@ var victoria;
           pj2.animations.add('correr', [33,34,35,36,37,38,39,40],10,false);
           pj2.animations.add('correrAtras', [40,39,38,37,36,35,34,33],10,false);
           pj.animations.add('ataque', [41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56],15,false);
+          pj2.animations.add('ataque', [41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56],15,false);
+
           pj2.animations.add('quieto', [18,19,20,21,22,23,24],10,false);
           pj.animations.add('agachado',[26],10,false);
           pj.animations.add('victoria',[57,58,59,60,61],7,false);
           pj.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
           pj.animations.add('ataque3',[9,10,11,12,13,14,15,16,17,18],7,false);
+          pj2.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
+          pj2.animations.add('ataque3',[9,10,11,12,13,14,15,16,17,18],7,false);
           pj2.animations.add('daño',[0,1,2,3,4,5,6,7,8,18],6,false);   
           pj2.animations.add('muerte',[62,63,64,65,66,67],7,false);   
           pj.animations.play('principal');
@@ -229,6 +234,33 @@ var victoria;
               moverse = false;
               setTimeout(dd,1500);
               pj.animation('principal');
+              agachado =false;
+            }
+              if(key.keyCode === Phaser.KeyCode.Z){
+              seguir = true;
+              moverse = false;
+              puño_j2 = true;
+              setTimeout(dd,1500);
+              pj2.animations.play('ataque3');
+              agachado = false;
+            }
+              
+              if(key.keyCode === Phaser.KeyCode.X){
+              seguir = true;
+              moverse = false;
+              puño_j2 = true;
+              setTimeout(dd,1500);
+              pj2.animations.play('ataque');
+              agachado = false;
+            }
+
+            if(key.keyCode === Phaser.KeyCode.S ){
+              puño_j2 = true;
+              seguir = true;
+              pj2.animations.play('ataque2');
+              moverse = false;
+              setTimeout(dd,1500);
+              pj2.animation('principal');
               agachado =false;
             }
         }
