@@ -48,8 +48,8 @@ var azul;
           juego.add.tileSprite(0,0,1950,970, 'Fondo');
           pj2 = juego.add.sprite(juego.width-300,juego.height-65, 'enemigo');
           pj = juego.add.sprite(300,juego.height-65, 'personajes');
-          azul = juego.add.sprite(juego.width-300,juego.height-265, 'azul');
-          rojo = juego.add.sprite(300,juego.height-265, 'rojo');
+          azul = juego.add.sprite(juego.width-300,juego.height-310, 'azul');
+          rojo = juego.add.sprite(300,juego.height-310, 'rojo');
                
           victoria= juego.add.audio('ganaste');
 
@@ -79,12 +79,16 @@ var azul;
           //ACTIVA LAS FISICAS AL JUGADOR
           juego.physics.arcade.enable(pj);
           juego.physics.arcade.enable(pj2);
+          juego.physics.arcade.enable(rojo);
+          juego.physics.arcade.enable(azul);     
           //EL JUGADOR NO PUEDE REBOTAR
           pj.body.bounce.y = 0;
           pj2.body.bounce.y = 0;
           //GRAVEDAD DEL JUGADOR
           pj.body.gravity.y = 900;//Gravedad del Jugador
           pj2.body.gravity.y = 900;
+          rojo.body.gravity.y = 900;//Gravedad del Jugador
+          azul.body.gravity.y = 900;
           //COLISION CON LOS BORDES
           pj.body.collideWorldBounds = true;
           pj2.body.collideWorldBounds = true;
@@ -214,6 +218,8 @@ var azul;
 
          pj.body.velocity.x = 0;
          pj2.body.velocity.x = 0;
+         rojo.body.velocity.x = 0;
+         azul.body.velocity.x = 0;
 
          juego.physics.arcade.overlap(pj,pj2, colision,null,this);
         // juego.physics.arcade.collide(pj,pj2);
@@ -307,6 +313,7 @@ var azul;
 
         if(juego.input.keyboard.isDown(Phaser.KeyCode.W)  && suelo == true && moverse == true){
          pj2.body.velocity.y= -550;
+         azul.body.velocity.y= -550;   
          salto = true;
          suelo = false;
          saltar_pj2= true;
@@ -314,11 +321,13 @@ var azul;
 
            if(juego.input.keyboard.isDown(Phaser.KeyCode.A) && moverse == true){
              pj2.body.velocity.x = -480;
+             azul.body.velocity.x = -480;
                  pj2.animations.play(correrpj2);
          }
 
          if(juego.input.keyboard.isDown(Phaser.KeyCode.D) && moverse == true){
             pj2.body.velocity.x = 480;
+            azul.body.velocity.x = 480;
                 pj2.animations.play(correr2pj2);
         }
 
@@ -327,6 +336,7 @@ var azul;
 
            if (Tecla.right.isDown && moverse == true ) {
                pj.body.velocity.x = 480;
+               rojo.body.velocity.x = 480;
                pj.animations.play(Correr);
                atacar = false;
                agachado = false;
@@ -344,6 +354,7 @@ var azul;
             if(Tecla.left.isDown && moverse == true){
                   pj.animations.play(Correr1);
                   pj.body.velocity.x = -480;
+                  rojo.body.velocity.x = -480;
                   atacar = false;      
                   agachado = false;
             }
@@ -351,6 +362,7 @@ var azul;
            //SALTAR
           if(Tecla.up.isDown && pj.position.y == juego.height-65 && moverse == true){
               pj.body.velocity.y= -550;
+              rojo.body.velocity.y= -550;
               pj.animations.play('principal');
               agachado = false;
           }
