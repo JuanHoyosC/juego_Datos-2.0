@@ -92,12 +92,15 @@ var puño_j2 = false;
           pj2.animations.add('quieto', [18,19,20,21,22,23,24],10,false);
           pj.animations.add('agachado',[26],10,false);
           pj.animations.add('victoria',[57,58,59,60,61],7,false);
+          pj2.animations.add('victoria',[57,58,59,60,61],7,false);
           pj.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
           pj.animations.add('ataque3',[9,10,11,12,13,14,15,16,17,18],7,false);
           pj2.animations.add('ataque2',[27,28,29,30,31,32,18],7,false);
           pj2.animations.add('ataque3',[9,10,11,12,13,14,15,16,17,18],7,false);
           pj2.animations.add('daño',[0,1,2,3,4,5,6,7,8,18],6,false);   
           pj2.animations.add('muerte',[62,63,64,65,66,67],7,false);   
+          pj.animations.add('daño',[0,1,2,3,4,5,6,7,8,18],6,false);   
+          pj.animations.add('muerte',[62,63,64,65,66,67],7,false);   
           pj.animations.play('principal');
           pj2.animations.play('principal');
           setTimeout(tiempo,1000);           
@@ -397,6 +400,49 @@ var puño_j2 = false;
                     moverse = false;
                     reinicio = true;
                     ganadas_pj++;
+                    cont = cont+1;   
+                    setTimeout(round,4000);
+                     
+                 }
+ 
+             }
+         }
+            
+             if(puño_j2 == true){      
+               if(pj.position.x -pj2.position.x >= -210  && pj.position.x -pj2.position.x <= -190 || pj.position.x -pj2.position.x  <=  210 && pj.position.x -pj2.position.x   >= 190){          
+                 puño_j2 = false;
+            
+                 pj.animations.play('daño');
+                 vida_Pj = vida_Pj-50;
+                 Txt.text='Vida jugador  : '+vida_Pj;        
+                 if(vida_Pj <= 0){
+                    pj.animations.play('muerte'); 
+                    Txt.text='Vida jugador 2 : 0'; 
+                    pj2.animations.play('victoria');
+                    Txt4.text='EL GANADOR ES EL JUGADOR 2'; 
+                    moverse = false;
+                    reinicio = true;
+                    ganadas_pj2++;
+                    cont = cont+1;
+                    setTimeout(round,4000);   
+                          
+                 }
+ 
+             }
+                
+                if(pj.position.x -pj2.position.x >= -190  && pj.position.x -pj2.position.x <= 0 || pj.position.x -pj2.position.x  >=0   && pj.position.x -pj2.position.x  <= 190){          
+                 puño_j2 = false;
+                 vida_Pj = vida_Pj-100;
+                  pj.animations.play('daño');
+                 Txt.text='Vida jugador 2 : '+vida_Pj2;        
+                 if(vida_Pj <= 0){
+                    pj.animations.play('muerte'); 
+                    Txt.text='Vida jugador 1 : 0';
+                    Txt4.text='EL GANADOR ES EL JUGADOR 2';
+                    pj2.animations.play('victoria');   
+                    moverse = false;
+                    reinicio = true;
+                    ganadas_pj2++;
                     cont = cont+1;   
                     setTimeout(round,4000);
                      
