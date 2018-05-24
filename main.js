@@ -217,8 +217,7 @@ var azul;
 
          pj.body.velocity.x = 0;
          pj2.body.velocity.x = 0;
-         rojo.body.velocity.x = 0;
-         azul.body.velocity.x = 0;
+     
 
          juego.physics.arcade.overlap(pj,pj2, colision,null,this);
         // juego.physics.arcade.collide(pj,pj2);
@@ -319,14 +318,14 @@ var azul;
        }
 
            if(juego.input.keyboard.isDown(Phaser.KeyCode.A) && moverse == true){
-             pj2.body.velocity.x = -480;
-             azul.body.velocity.x = -480;
+             pj2.body.velocity.x =pj2.position.x;
+             azul.position.x = -480;
                  pj2.animations.play(correrpj2);
          }
 
          if(juego.input.keyboard.isDown(Phaser.KeyCode.D) && moverse == true){
-            pj2.body.velocity.x = 480;
-            azul.body.velocity.x = 480;
+            pj2.body.velocity.x = pj2.position.x;
+            azul.position.x = 480;
                 pj2.animations.play(correr2pj2);
         }
 
@@ -335,7 +334,7 @@ var azul;
 
            if (Tecla.right.isDown && moverse == true ) {
                pj.body.velocity.x = 480;
-               rojo.body.velocity.x = 480;
+               rojo.position.x = pj.position.x;
                pj.animations.play(Correr);
                atacar = false;
                agachado = false;
@@ -353,7 +352,7 @@ var azul;
             if(Tecla.left.isDown && moverse == true){
                   pj.animations.play(Correr1);
                   pj.body.velocity.x = -480;
-                  rojo.body.velocity.x = -480;
+                  rojo.position.x = pj.position.x;
                   atacar = false;      
                   agachado = false;
             }
