@@ -369,8 +369,9 @@ var azul;
             salto = false;
             suelo = true;
             saltar_pj2 = false;
-          
-          
+           }
+            if(pj.position.y == juego.height-65 ){
+            rojo.position.y = juego.height-310;
            }
                
                
