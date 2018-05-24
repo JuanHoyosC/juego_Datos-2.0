@@ -83,6 +83,7 @@ var azul;
           //GRAVEDAD DEL JUGADOR
           pj.body.gravity.y = 900;//Gravedad del Jugador
           pj2.body.gravity.y = 900;
+          rojo.body.gravity.y = 900;
         
           //COLISION CON LOS BORDES
           pj.body.collideWorldBounds = true;
@@ -307,7 +308,7 @@ var azul;
 
         if(juego.input.keyboard.isDown(Phaser.KeyCode.W)  && suelo == true && moverse == true){
          pj2.body.velocity.y= -550;
-        
+         rojo.body.velocity.y= -550;     
          salto = true;
          suelo = false;
          saltar_pj2= true;
