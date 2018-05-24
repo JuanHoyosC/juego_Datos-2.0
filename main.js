@@ -414,7 +414,7 @@ var puño_j2 = false;
             
                  pj.animations.play('daño');
                  vida_Pj = vida_Pj-50;
-                 Txt.text='Vida jugador  : '+vida_Pj;        
+                 Txt.text='Vida jugador 1 : '+vida_Pj;        
                  if(vida_Pj <= 0){
                     pj.animations.play('muerte'); 
                     Txt.text='Vida jugador 2 : 0'; 
@@ -434,7 +434,7 @@ var puño_j2 = false;
                  puño_j2 = false;
                  vida_Pj = vida_Pj-100;
                   pj.animations.play('daño');
-                 Txt.text='Vida jugador 2 : '+vida_Pj2;        
+                 Txt.text='Vida jugador 1 : '+vida_Pj;        
                  if(vida_Pj <= 0){
                     pj.animations.play('muerte'); 
                     Txt.text='Vida jugador 1 : 0';
