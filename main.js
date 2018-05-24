@@ -200,7 +200,7 @@ var victoria;
         //Golpes al enemigo
 
         juego.input.keyboard.onUpCallback = function(key){
-            if(key.keyCode === Phaser.KeyCode.j{
+            if(key.keyCode === Phaser.KeyCode.j){
               seguir = true;
               moverse = false;
               puño = true;
