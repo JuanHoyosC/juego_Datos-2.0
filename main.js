@@ -441,7 +441,7 @@ var azul;
                  Txt.text='Vida jugador 1 : '+vida_Pj;        
                  if(vida_Pj <= 0){
                     pj.animations.play('muerte'); 
-                    Txt.text='Vida jugador 2 : 0'; 
+                    Txt.text='Vida jugador 1 : 0'; 
                     pj2.animations.play('victoria');
                     Txt4.text='EL GANADOR ES EL JUGADOR 2'; 
                     moverse = false;
