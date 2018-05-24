@@ -87,8 +87,7 @@ var azul;
           //GRAVEDAD DEL JUGADOR
           pj.body.gravity.y = 900;//Gravedad del Jugador
           pj2.body.gravity.y = 900;
-          rojo.body.gravity.y = 900;//Gravedad del Jugador
-          azul.body.gravity.y = 900;
+        
           //COLISION CON LOS BORDES
           pj.body.collideWorldBounds = true;
           pj2.body.collideWorldBounds = true;
