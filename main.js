@@ -59,9 +59,9 @@ var azul;
           pj2.anchor.setTo(0.5,1);
           pj.scale.setTo(1.7);
           azul.anchor.setTo(0.5, 1);
-          azul.scale.setTo(0.1);
+          azul.scale.setTo(0.2);
           rojo.anchor.setTo(0.5,1);
-          rojo.scale.setTo(0.1);
+          rojo.scale.setTo(0.08);
           //Textos
           Txt2 = juego.add.text(juego.world.width-380, 22, 'Puntos: 0', {fontSize: '27px', fill: 'white',fontFamily: 'Pixeled'});
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
