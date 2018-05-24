@@ -312,7 +312,7 @@ var azul;
 
         if(juego.input.keyboard.isDown(Phaser.KeyCode.W)  && suelo == true && moverse == true){
          pj2.body.velocity.y= -550;
-         azul.body.velocity.y= -550;   
+         azul.position.y= pj2.position.y;   
          salto = true;
          suelo = false;
          saltar_pj2= true;
@@ -361,7 +361,7 @@ var azul;
            //SALTAR
           if(Tecla.up.isDown && pj.position.y == juego.height-65 && moverse == true){
               pj.body.velocity.y= -550;
-              rojo.body.velocity.y= -550;
+              rojo.position.y= pj.position.y;
               pj.animations.play('principal');
               agachado = false;
           }
@@ -370,6 +370,8 @@ var azul;
             salto = false;
             suelo = true;
             saltar_pj2 = false;
+          azul = juego.add.sprite(pj2.position.x,juego.height-310, 'azul');
+          
            }
                
                
