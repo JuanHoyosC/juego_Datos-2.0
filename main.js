@@ -25,8 +25,7 @@ var cont = 0;
 var saltar_pj2 = false;
 var victoria;
 var puño_j2 = false;
-var rojo;
-var azul;
+
 
 
       function preload(){
@@ -34,7 +33,7 @@ var azul;
             juego.load.image('Fondo', 'Imagenes/Fondo_Juego.jpg');
             juego.load.spritesheet('personajes', 'Quieto/PJ.png',200,165,70);
             juego.load.spritesheet('golpe', 'Imagenes/golpe.png',290,400);
-            juego.load.spritesheet('rojo', 'Quieto/roja.png',548,720);
+            
     
             juego.load.spritesheet('enemigo', 'Quieto/PJ.png',200,165,70);
             juego.load.audio('audio1','Musica/GameOver.mp3');
@@ -48,7 +47,7 @@ var azul;
           juego.add.tileSprite(0,0,1950,970, 'Fondo');
           pj2 = juego.add.sprite(juego.width-300,juego.height-65, 'enemigo');
           pj = juego.add.sprite(300,juego.height-65, 'personajes');
-          rojo = juego.add.sprite(300,juego.height-310, 'rojo');
+         
                
           victoria= juego.add.audio('ganaste');
 
@@ -57,8 +56,7 @@ var azul;
           pj2.scale.setTo(-1.7,1.7);
           pj2.anchor.setTo(0.5,1);
           pj.scale.setTo(1.7);
-          rojo.anchor.setTo(0.5,1);
-          rojo.scale.setTo(0.08);
+        
           //Textos
           Txt2 = juego.add.text(juego.world.width-380, 22, 'Puntos: 0', {fontSize: '27px', fill: 'white',fontFamily: 'Pixeled'});
           Txt2.text='Vida jugador 2 : '+vida_Pj2;
@@ -76,14 +74,14 @@ var azul;
           //ACTIVA LAS FISICAS AL JUGADOR
           juego.physics.arcade.enable(pj);
           juego.physics.arcade.enable(pj2);
-          juego.physics.arcade.enable(rojo);     
+            
           //EL JUGADOR NO PUEDE REBOTAR
           pj.body.bounce.y = 0;
           pj2.body.bounce.y = 0;
           //GRAVEDAD DEL JUGADOR
           pj.body.gravity.y = 900;//Gravedad del Jugador
           pj2.body.gravity.y = 900;
-          rojo.body.gravity.y = 900;
+         
         
           //COLISION CON LOS BORDES
           pj.body.collideWorldBounds = true;
@@ -329,8 +327,7 @@ var azul;
           //MOVERSE A LA DERECA
 
            if (Tecla.right.isDown && moverse == true ) {
-               pj.body.velocity.x = 480;
-               rojo.position.x = pj.position.x;
+               pj.body.velocity.x = 480;            
                pj.animations.play(Correr);
                atacar = false;
                agachado = false;
@@ -341,14 +338,13 @@ var azul;
           if(Tecla.down.isDown && moverse == true){
            pj.animations.play('agachado');
            atacar = false;
-                agachado = true;
+           agachado = true;
           }
 
           //MOVERSE A LA IZQUIERDA
             if(Tecla.left.isDown && moverse == true){
                   pj.animations.play(Correr1);
                   pj.body.velocity.x = -480;
-                  rojo.position.x = pj.position.x;
                   atacar = false;      
                   agachado = false;
             }
@@ -356,7 +352,6 @@ var azul;
            //SALTAR
           if(Tecla.up.isDown && pj.position.y == juego.height-65 && moverse == true){
               pj.body.velocity.y= -550;
-              rojo.position.y= pj.position.y+610;
               pj.animations.play('principal');
               agachado = false;
           }
